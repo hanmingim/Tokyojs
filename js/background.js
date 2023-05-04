@@ -17,7 +17,7 @@ const chosenimage = images[Math.floor(Math.random() * images.length)];
 document.body.style.backgroundImage = `url('img/${chosenimage}')`;
 document.body.style.backgroundSize = "cover";
 
-const bgImage = new Image(); // bgImage 변수 선언
+const bgImage = new Image(); // bgImage 변수 선언해줌
 
 bgImage.onload = function () { // 이미지 로드가 완료된 후 배경 이미지로 설정
     document.body.style.backgroundImage = `url('img/${chosenimage}')`;
