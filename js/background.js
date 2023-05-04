@@ -17,10 +17,13 @@ const chosenimage = images[Math.floor(Math.random() * images.length)];
 document.body.style.backgroundImage = `url('img/${chosenimage}')`;
 document.body.style.backgroundSize = "cover";
 
-bgImage.src = `img/${chosenimage}`;
-bgImage.style.width = "100vw";
-bgImage.style.height = "100vh";
+const bgImage = new Image(); // bgImage 변수 선언
 
+bgImage.onload = function () { // 이미지 로드가 완료된 후 배경 이미지로 설정
+    document.body.style.backgroundImage = `url('img/${chosenimage}')`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+};
+
+bgImage.src = `img/${chosenimage}`;
 document.body.appendChild(bgImage);
-document.body.style.backgroundImage = "images";
-document.body.style.backgroundSize = "cover";
